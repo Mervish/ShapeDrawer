@@ -11,6 +11,11 @@
 *.gch
 *.pch
 
+# Visual Studio Files
+*.user
+.vs
+Debug
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
