@@ -1,10 +1,10 @@
-#include "Star.h"
+ï»¿#include "Star.h"
 
-inline void Star::updateDrawData() {
-	//„I„ƒ„„€„|„„x„…„u„„ „„„€„„-„w„u „p„|„s„€„‚„y„„„} „‰„„„€ „y „{„‚„…„s, 
-	ddata.points.push_back({ _center.coordx, _center.coordy }); //GL_TRIANGLE_FAN „„„‚„u„q„…„u„„ „…„ƒ„„„p„~„€„r„{„y „ˆ„u„~„„„‚„p„|„„~„€„z „„„€„‰„{„y, „€„„ „{„€„„„€„‚„€„z „q„…„t„…„„ „‚„y„ƒ„€„r„p„„„„ƒ„‘ „„€„|„y„s„€„~„
+void Star::updateDrawData() {
+	//Ğ˜ÑĞ¿Ğ¾Ğ»ÑŒĞ·ÑƒĞµÑ‚ Ñ‚Ğ¾Ñ‚-Ğ¶Ğµ Ğ°Ğ»Ğ³Ğ¾Ñ€Ğ¸Ñ‚Ğ¼ Ñ‡Ñ‚Ğ¾ Ğ¸ ĞºÑ€ÑƒĞ³, 
+	ddata.points.push_back({ _center.coordx, _center.coordy }); //GL_TRIANGLE_FAN Ñ‚Ñ€ĞµĞ±ÑƒĞµÑ‚ ÑƒÑÑ‚Ğ°Ğ½Ğ¾Ğ²ĞºĞ¸ Ñ†ĞµĞ½Ñ‚Ñ€Ğ°Ğ»ÑŒĞ½Ğ¾Ğ¹ Ñ‚Ğ¾Ñ‡ĞºĞ¸, Ğ¾Ñ‚ ĞºĞ¾Ñ‚Ğ¾Ñ€Ğ¾Ğ¹ Ğ±ÑƒĞ´ÑƒÑ‚ Ñ€Ğ¸ÑĞ¾Ğ²Ğ°Ñ‚ÑŒÑÑ Ğ¿Ğ¾Ğ»Ğ¸Ğ³Ğ¾Ğ½Ñ‹
 	auto iterations = _ends * 2;
-	for (unsigned int ii = 0; ii <= iterations; ++ii) //„N„p „€„t„~„… „y„„„u„‚„p„ˆ„y„ „q„€„|„„Š„u, „‰„„„€„q„ „†„y„s„…„‚„p „x„p„ˆ„y„{„|„y„|„p„ƒ„
+	for (unsigned int ii = 0; ii <= iterations; ++ii) //ĞĞ° Ğ¾Ğ´Ğ½Ñƒ Ğ¸Ñ‚ĞµÑ€Ğ°Ñ†Ğ¸Ñ Ğ±Ğ¾Ğ»ÑŒÑˆĞµ, Ñ‡Ñ‚Ğ¾Ğ±Ñ‹ Ñ„Ğ¸Ğ³ÑƒÑ€Ğ° Ğ·Ğ°Ñ†Ğ¸ĞºĞ»Ğ¸Ğ»Ğ°ÑÑŒ
 	{
 		float rad = _radius;
 		if (ii % 2)
@@ -12,6 +12,6 @@ inline void Star::updateDrawData() {
 		float theta = 2.0f * 3.1415926f * float(ii) / float(iterations);
 		float x = rad * std::cosf(theta);
 		float y = rad * std::sinf(theta);
-		ddata.points.push_back({ _center.coordx + x, _center.coordy + y }); //„S„€„‰„{„y „†„€„‚„}„y„‚„…„„‹„y„u „€„{„‚„…„w„~„€„ƒ„„„
+		ddata.points.push_back({ _center.coordx + x, _center.coordy + y }); //Ğ¢Ğ¾Ñ‡ĞºĞ¸ Ñ„Ğ¾Ñ€Ğ¼Ğ¸Ñ€ÑƒÑÑ‰Ğ¸Ğµ Ğ¾ĞºÑ€ÑƒĞ¶Ğ½Ğ¾ÑÑ‚ÑŒ
 	}
 }

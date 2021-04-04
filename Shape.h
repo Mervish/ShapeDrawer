@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <cmath>
 #include <vector>
@@ -8,7 +8,7 @@ struct Point
 {
 	float coordx = 0;
 	float coordy = 0;
-	//Point(float x, float y) : coordx(x), coordy(y){} //„N„u„€„q
+	//Point(float x, float y) : coordx(x), coordy(y){} //ĞĞµĞ¾Ğ±
 	Point operator +(const Point& other)
 	{
 		return { coordx + other.coordx, coordy + other.coordy };
@@ -53,10 +53,10 @@ public:
 		}
 		return ddata; 
 	}
-	//„I„x„}„u„~„u„~„y„‘ „~„u „„„‚„u„q„…„„‹„y„u „p„„t„u„z„„„p
+	//Ğ˜Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ Ğ½Ğµ Ñ‚Ñ€ĞµĞ±ÑƒÑÑ‰Ğ¸Ğµ Ğ°Ğ¿Ğ´ĞµĞ¹Ñ‚Ğ°
 	void setColor(GLColor color) { ddata.color = color; }
-	//„I„x„}„u„~„u„~„y„‘ „„„‚„u„q„…„„‹„y„u „p„„t„u„z„„„p
-	void set„Renter(Point center) { 
+	//Ğ˜Ğ·Ğ¼ĞµĞ½ĞµĞ½Ğ¸Ñ Ñ‚Ñ€ĞµĞ±ÑƒÑÑ‰Ğ¸Ğµ Ğ°Ğ¿Ğ´ĞµĞ¹Ñ‚Ğ°
+	void setĞ¡enter(Point center) { 
 		_center = center; 
 		requireUpdate();
 	}
@@ -91,5 +91,5 @@ protected:
 	Point _size;
 
 private:
-	virtual void resized() {}; //„N„p „ƒ„|„…„‰„p„z „u„ƒ„|„y „~„p„} „~„…„w„~„€ „ƒ„t„u„|„p„„„ „‰„„„€-„„„€ „r „ƒ„|„…„‰„p„u „ƒ„}„u„~„ „‚„p„x„}„u„‚„p
+	virtual void resized() {}; //ĞĞ° ÑĞ»ÑƒÑ‡Ğ°Ğ¹ ĞµÑĞ»Ğ¸ Ğ½Ğ°Ğ¼ Ğ½ÑƒĞ¶Ğ½Ğ¾ ÑĞ´ĞµĞ»Ğ°Ñ‚ÑŒ Ñ‡Ñ‚Ğ¾-Ñ‚Ğ¾ Ğ² ÑĞ»ÑƒÑ‡Ğ°Ğµ ÑĞ¼ĞµĞ½Ñ‹ Ñ€Ğ°Ğ·Ğ¼ĞµÑ€Ğ°
 };

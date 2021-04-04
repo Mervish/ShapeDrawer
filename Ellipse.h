@@ -1,11 +1,11 @@
-#pragma once
+Ôªø#pragma once
 #include "Shape.h"
 #include <corecrt_math_defines.h>
 
 class Ellipse : public ShapeSizeable
 {
 public:
-	Ellipse(GLfloat radius) : Ellipse({ radius, radius }) {} //ÑKÑÇÑÖÑs - ÑèÑÑÑÄ ÑÅÑÇÑÄÑÉÑÑÑÄ ÑÇÑpÑrÑ~ÑÄÑäÑyÑÇÑuÑ~Ñ~ÑÄÑz ÑèÑ|Ñ|ÑyÑÅÑÉ
+	Ellipse(GLfloat radius) : Ellipse({ radius, radius }) {} //–ö—Ä—É–≥ - —ç—Ç–æ –ø—Ä–æ—Å—Ç–æ —Ä–∞–≤–Ω–æ—à–∏—Ä–µ–Ω–Ω–æ–π —ç–ª–ª–∏–ø—Å
 	Ellipse(Point size) : ShapeSizeable(GL_TRIANGLE_FAN, size) {
 		resized();
 	}

@@ -1,12 +1,12 @@
-#include "Ellipse.h"
+ï»¿#include "Ellipse.h"
 
-inline void Ellipse::updateDrawData() {
+void Ellipse::updateDrawData() {
 	int i;
 	int num_segments = 20;
 	//GLfloat radius = 0.8f; //radius
 	GLfloat twicePi = 2.0f * M_PI;
 
-	ddata.points.push_back({ _center.coordx, _center.coordy }); //GL_TRIANGLE_FAN „„„‚„u„q„…„u„„ „…„ƒ„„„p„~„€„r„{„y „ˆ„u„~„„„‚„p„|„„~„€„z „„„€„‰„{„y, „€„„ „{„€„„„€„‚„€„z „q„…„t„…„„ „‚„y„ƒ„€„r„p„„„„ƒ„‘ „„€„|„y„s„€„~„
+	ddata.points.push_back({ _center.coordx, _center.coordy }); //GL_TRIANGLE_FAN Ñ‚Ñ€ĞµĞ±ÑƒĞµÑ‚ ÑƒÑÑ‚Ğ°Ğ½Ğ¾Ğ²ĞºĞ¸ Ñ†ĞµĞ½Ñ‚Ñ€Ğ°Ğ»ÑŒĞ½Ğ¾Ğ¹ Ñ‚Ğ¾Ñ‡ĞºĞ¸, Ğ¾Ñ‚ ĞºĞ¾Ñ‚Ğ¾Ñ€Ğ¾Ğ¹ Ğ±ÑƒĞ´ÑƒÑ‚ Ñ€Ğ¸ÑĞ¾Ğ²Ğ°Ñ‚ÑŒÑÑ Ğ¿Ğ¾Ğ»Ğ¸Ğ³Ğ¾Ğ½Ñ‹
 	for (i = 0; i <= num_segments; ++i) {
 		auto theta = static_cast<float>(i) * twicePi / num_segments;
 		ddata.points.push_back({
@@ -17,8 +17,8 @@ inline void Ellipse::updateDrawData() {
 	glEnd();
 }
 
-inline void Ellipse::resized() {
-	num_segments = num_segments * std::max(_size.coordx, _size.coordy); //„T„}„u„~„„Š„y„} „y„|„y „…„r„u„|„y„‰„y„} „{„€„|„y„‰„u„ƒ„„„r„€ „ƒ„u„s„}„u„~„„„€„r „r „x„p„r„y„ƒ„y„}„€„ƒ„„„y „€„„ „‚„p„t„y„…„ƒ„p 
+void Ellipse::resized() {
+	num_segments = num_segments * std::max(_size.coordx, _size.coordy); //Ğ£Ğ¼ĞµĞ½ÑŒÑˆĞ¸Ğ¼ Ğ¸Ğ»Ğ¸ ÑƒĞ²ĞµĞ»Ğ¸Ñ‡Ğ¸Ğ¼ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞµĞ³Ğ¼ĞµĞ½Ñ‚Ğ¾Ğ² Ğ² Ğ·Ğ°Ğ²Ğ¸ÑĞ¸Ğ¼Ğ¾ÑÑ‚Ğ¸ Ğ¾Ñ‚ Ñ€Ğ°Ğ´Ğ¸ÑƒÑĞ° 
 	if (num_segments < 4)
 		num_segments = 4;
 }

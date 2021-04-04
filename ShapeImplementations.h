@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <array>
 
 #include "Shape.h"
@@ -40,7 +40,7 @@ private:
 class Rectangle : public ShapeSizeable
 {
 public:
-	Rectangle(GLfloat width) :Rectangle({width, width}) {} //„K„r„p„t„‚„p„„ - „„„„€ „„‚„€„ƒ„„„€ „‚„p„r„~„€„Š„y„‚„u„~„~„€„z „„‚„‘„}„€„…„s„€„|„„~„y„{
+	Rectangle(GLfloat width) :Rectangle({width, width}) {} //ĞšĞ²Ğ°Ğ´Ñ€Ğ°Ñ‚ - ÑÑ‚Ğ¾ Ğ¿Ñ€Ğ¾ÑÑ‚Ğ¾ Ñ€Ğ°Ğ²Ğ½Ğ¾ÑˆĞ¸Ñ€ĞµĞ½Ğ½Ğ¾Ğ¹ Ğ¿Ñ€ÑĞ¼Ğ¾ÑƒĞ³Ğ¾Ğ»ÑŒĞ½Ğ¸Ğº
 	Rectangle(Point size):ShapeSizeable(GL_QUADS, size) {}
 
 private:
@@ -49,8 +49,8 @@ private:
 		auto halfWidth = _size.coordx / 2;
 		auto halfHeight = _size.coordy / 2;
 
-		//„O„q„„‰„~„€ „r „s„‚„p„†„y„‰„u„ƒ„{„y„‡ „†„‚„u„z„}„r„€„‚„{„p„‡ „… „„‚„‘„}„€„…„s„€„|„„~„y„{„€„r „x„p„t„p„u„„„ƒ„‘ „|„u„r„„z „r„u„‚„‡„~„y„z „…„s„€„| „{„p„{ „~„p„‰„p„|„„~„p„‘ „„„€„‰„{„p. 
-		//„N„€ „r „~„p„Š„u„} „„‚„y„}„u„‚„u „}„ „q„…„t„u„} „r„„‰„y„ƒ„|„‘„„„ „{„€„€„‚„t„y„~„p„„„ „€„„ „ˆ„u„~„„„‚„p.
+		//ĞĞ±Ñ‹Ñ‡Ğ½Ğ¾ Ğ² Ğ³Ñ€Ğ°Ñ„Ğ¸Ñ‡ĞµÑĞºĞ¸Ñ… Ñ„Ñ€ĞµĞ¹Ğ¼Ğ²Ğ¾Ñ€ĞºĞ°Ñ… Ñƒ Ğ¿Ñ€ÑĞ¼Ğ¾ÑƒĞ³Ğ¾Ğ»ÑŒĞ½Ğ¸ĞºĞ¾Ğ² Ğ·Ğ°Ğ´Ğ°ĞµÑ‚ÑÑ Ğ»ĞµĞ²Ñ‹Ğ¹ Ğ²ĞµÑ€Ñ…Ğ½Ğ¸Ğ¹ ÑƒĞ³Ğ¾Ğ» ĞºĞ°Ğº Ğ½Ğ°Ñ‡Ğ°Ğ»ÑŒĞ½Ğ°Ñ Ñ‚Ğ¾Ñ‡ĞºĞ°. 
+		//ĞĞ¾ Ğ² Ğ½Ğ°ÑˆĞµĞ¼ Ğ¿Ñ€Ğ¸Ğ¼ĞµÑ€Ğµ Ğ¼Ñ‹ Ğ±ÑƒĞ´ĞµĞ¼ Ğ²Ñ‹Ñ‡Ğ¸ÑĞ»ÑÑ‚ÑŒ ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñ‹ Ğ¾Ñ‚ Ñ†ĞµĞ½Ñ‚Ñ€Ğ°.
 		ddata.points.push_back({_center.coordx - halfWidth, _center.coordy + halfHeight});
 		ddata.points.push_back({_center.coordx + halfWidth, _center.coordy + halfHeight});
 		ddata.points.push_back({_center.coordx + halfWidth, _center.coordy - halfHeight});
