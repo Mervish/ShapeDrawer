@@ -68,12 +68,12 @@ public:
 protected:
 	Point _center;
 	DrawData ddata;
-
-private:
 	void requireUpdate() {
 		ddata.points.clear();
 		updated = false;
 	}
+
+private:
 	bool updated = false;
 	virtual void updateDrawData() = 0;
 };
@@ -84,6 +84,7 @@ public:
 	ShapeSizeable(GLenum mode, Point size) : Shape(mode), _size(size) {};
 	void setSize(Point newSize) {
 		_size = newSize; 
+		requireUpdate();
 		resized();
 	};
 

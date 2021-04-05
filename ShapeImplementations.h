@@ -27,13 +27,10 @@ public:
 private:
 	void updateDrawData()
 	{
-		auto halfWidth = _size.coordx / 2;
-		auto halfHeight = _size.coordy / 2;
-
-		ddata.points.push_back({ _center.coordx, _center.coordy + halfHeight });
-		ddata.points.push_back({ _center.coordx + halfWidth, _center.coordy});
-		ddata.points.push_back({ _center.coordx, _center.coordy - halfHeight });
-		ddata.points.push_back({ _center.coordx - halfWidth, _center.coordy});
+		ddata.points.push_back({ _center.coordx, _center.coordy + _size.coordy });
+		ddata.points.push_back({ _center.coordx + _size.coordx, _center.coordy});
+		ddata.points.push_back({ _center.coordx, _center.coordy - _size.coordy });
+		ddata.points.push_back({ _center.coordx - _size.coordx, _center.coordy});
 	}
 };
 
@@ -46,14 +43,11 @@ public:
 private:
 	void updateDrawData()
 	{
-		auto halfWidth = _size.coordx / 2;
-		auto halfHeight = _size.coordy / 2;
-
 		//Обычно в графических фреймворках у прямоугольников задается левый верхний угол как начальная точка. 
 		//Но в нашем примере мы будем вычислять координаты от центра.
-		ddata.points.push_back({_center.coordx - halfWidth, _center.coordy + halfHeight});
-		ddata.points.push_back({_center.coordx + halfWidth, _center.coordy + halfHeight});
-		ddata.points.push_back({_center.coordx + halfWidth, _center.coordy - halfHeight});
-		ddata.points.push_back({_center.coordx - halfWidth, _center.coordy - halfHeight});
+		ddata.points.push_back({_center.coordx - _size.coordx, _center.coordy + _size.coordy});
+		ddata.points.push_back({_center.coordx + _size.coordx, _center.coordy + _size.coordy});
+		ddata.points.push_back({_center.coordx + _size.coordx, _center.coordy - _size.coordy});
+		ddata.points.push_back({_center.coordx - _size.coordx, _center.coordy - _size.coordy});
 	}
 };
